@@ -1,0 +1,6 @@
+framework module Pods_DialyCalendar {
+  umbrella header "Pods-DialyCalendar-umbrella.h"
+
+  export *
+  module * { export * }
+}
