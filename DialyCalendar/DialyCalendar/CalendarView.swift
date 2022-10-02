@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SelectableCalendarView
 import FirebaseFirestore
 
 struct CalendarView: View {
@@ -28,7 +27,7 @@ struct CalendarView: View {
             ForEach(dates, id:\.self){ date in
                 
                 if Calendar.current.component(.month, from: date) == Calendar.current.component(.month, from: selectMonth){
-                    if Calendar.current.component(.day, from: date) == Calendar.current.component(.day, from: Date()){
+                    if Calendar.current.component(.day, from: date) == Calendar.current.component(.day, from: Date()) && Calendar.current.component(.month, from: date) == Calendar.current.component(.month, from: Date()){
                         
                         Button("\(date.getDateNumber())"){
                             
@@ -56,7 +55,8 @@ struct CalendarView: View {
                         .padding(8)
                         .foregroundColor(.white)
                         .frame(width: 50, height: 50)
-                        .background(Color.cyan)
+                        .background(Color.orange
+                        )
                         .cornerRadius(10)
                     }else{
                         Button("\(date.getDateNumber())"){
