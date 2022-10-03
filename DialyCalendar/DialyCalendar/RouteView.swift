@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct RouteView: View {
     
     @EnvironmentObject var appState:AppState
     
     var body: some View {
-        if appState.isLogin{
+        if Auth.auth().currentUser != nil{
             MonthSelectView()
         }else{
             ContentView()

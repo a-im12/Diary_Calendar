@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseFirestore
+import FirebaseAuth
 
 struct CalendarView: View {
     
@@ -14,7 +15,6 @@ struct CalendarView: View {
     var selectMonth:Date
     @EnvironmentObject var appState:AppState
     @State var isShowingView:Bool = false
-    
     
     var body: some View {
         let dates = selectMonth.getDaysForMonth()
@@ -37,26 +37,28 @@ struct CalendarView: View {
                             
                             appState.dialy = ["Please add a dialy..."]
                             
-                            db.document(appState.uid).collection("dialy").whereField("date", isEqualTo: appState.separatedByUnderBar).getDocuments(){ (querySnapshot, error) in
-                                if let error = error{
-                                    print(error)
-                                    return
-                                }else{
-                                    for document in querySnapshot!.documents{
-                                        guard let content = document.get("content") as? String else {
-                                            continue
+                            if let user = Auth.auth().currentUser{
+                                
+                                db.document(user.uid).collection("dialy").whereField("date", isEqualTo: appState.separatedByUnderBar).getDocuments(){ (querySnapshot, error) in
+                                    if let error = error{
+                                        print(error)
+                                        return
+                                    }else{
+                                        for document in querySnapshot!.documents{
+                                            guard let content = document.get("content") as? String else {
+                                                continue
+                                            }
+                                            appState.dialy[0] = content
                                         }
-                                        appState.dialy[0] = content
                                     }
                                 }
+                                isShowingView.toggle()
                             }
-                            isShowingView.toggle()
                         }
                         .padding(8)
                         .foregroundColor(.white)
                         .frame(width: 50, height: 50)
-                        .background(Color.orange
-                        )
+                        .background(Color.orange)
                         .cornerRadius(10)
                     }else{
                         Button("\(date.getDateNumber())"){
@@ -67,20 +69,23 @@ struct CalendarView: View {
                             
                             appState.dialy = ["Please add a dialy..."]
                             
-                            db.document(appState.uid).collection("dialy").whereField("date", isEqualTo: appState.separatedByUnderBar).getDocuments(){ (querySnapshot, error) in
-                                if let error = error{
-                                    print(error)
-                                    return
-                                }else{
-                                    for document in querySnapshot!.documents{
-                                        guard let content = document.get("content") as? String else {
-                                            continue
+                            if let user = Auth.auth().currentUser{
+                                
+                                db.document(user.uid).collection("dialy").whereField("date", isEqualTo: appState.separatedByUnderBar).getDocuments(){ (querySnapshot, error) in
+                                    if let error = error{
+                                        print(error)
+                                        return
+                                    }else{
+                                        for document in querySnapshot!.documents{
+                                            guard let content = document.get("content") as? String else {
+                                                continue
+                                            }
+                                            appState.dialy[0] = content
                                         }
-                                        appState.dialy[0] = content
                                     }
                                 }
+                                isShowingView.toggle()
                             }
-                            isShowingView.toggle()
                         }
                         .padding(8)
                         .foregroundColor(.white)

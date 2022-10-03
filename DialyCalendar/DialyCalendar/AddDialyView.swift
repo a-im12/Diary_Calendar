@@ -7,6 +7,8 @@
 
 import SwiftUI
 import FirebaseFirestore
+import FirebaseAuth
+
 struct AddDialyView: View {
     
     @EnvironmentObject var appState:AppState
@@ -30,30 +32,32 @@ struct AddDialyView: View {
                 
                 if dialy != ""{
                     
-                    db.document(appState.uid).collection("dialy")
-                        .document(appState.separatedByUnderBar)
-                        .getDocument(){(document, error) in
-                            
-                            if let document = document{
+                    if let user = Auth.auth().currentUser{
+                        db.document(user.uid).collection("dialy")
+                            .document(appState.separatedByUnderBar)
+                            .getDocument(){(document, error) in
                                 
-                                if document.exists{
-                                    db.document(appState.uid).collection("dialy")
-                                        .document(appState.separatedByUnderBar)
-                                        .updateData([
-                                            "content" : dialy
-                                        ])
-                                }else{
-                                    db.document(appState.uid).collection("dialy")
-                                        .document(appState.separatedByUnderBar)
-                                        .setData([
-                                            "date" : appState.separatedByUnderBar,
-                                            "content" : dialy
-                                        ])
+                                if let document = document{
+                                    
+                                    if document.exists{
+                                        db.document(user.uid).collection("dialy")
+                                            .document(appState.separatedByUnderBar)
+                                            .updateData([
+                                                "content" : dialy
+                                            ])
+                                    }else{
+                                        db.document(user.uid).collection("dialy")
+                                            .document(appState.separatedByUnderBar)
+                                            .setData([
+                                                "date" : appState.separatedByUnderBar,
+                                                "content" : dialy
+                                            ])
+                                    }
                                 }
                             }
-                        }
-                    appState.dialy[0] = dialy
-                    dissmiss()
+                        appState.dialy[0] = dialy
+                        dissmiss()
+                    }
                 }else{
                     errorMessage = "1文字以上入力してください"
                     isShowingAleart = true

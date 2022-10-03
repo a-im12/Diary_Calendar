@@ -12,8 +12,8 @@ struct MonthSelectView: View {
     
     var userAuth = UserAuth()
     @EnvironmentObject var appState:AppState
-    
     @State var num:Int = 0
+    
     var body: some View {
         NavigationView{
             VStack {
@@ -43,8 +43,7 @@ struct MonthSelectView: View {
                     Button(action:{
                         do {
                             try Auth.auth().signOut()
-                            defer{appState.isLogin = false}
-                            defer{appState.uid = ""}
+                            defer{appState.path = NavigationPath()}
                         } catch let signOutError as NSError {
                             print("Error signing out: %@", signOutError)
                         }

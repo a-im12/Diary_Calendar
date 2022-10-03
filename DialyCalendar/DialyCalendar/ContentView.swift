@@ -29,7 +29,7 @@ struct ContentView: View {
                 .padding()
             TextField("password", text: $pass)
                 .padding()
-            Button(action:{
+            Button("Log In"){
                 errorMessage = userInfo.checkEntry(email: email, pass: pass)
                                     
                 if errorMessage == ""{
@@ -46,20 +46,22 @@ struct ContentView: View {
                                                             
                             userAuth.accessUserDB(uid: uid, email: email)
                             
-                            self.appState.uid = uid
+//                            self.appState.uid = uid
                             // 画面遷移するために変換
-                            self.appState.isLogin = true
+//                            self.appState.isLogin = true
                             self.appState.path.append("Route")
                         }
                     }
                 }else{
                     isShowingAlert = true
                 }
-            }){
-                Text("Log In")
-                    .alert(isPresented: $isShowingAlert){
-                        Alert(title: Text("ログインエラー"), message: Text(errorMessage))
-                    }
+            }
+            .foregroundColor(.white)
+            .frame(width: 120, height: 50)
+            .background(Color.blue)
+            .cornerRadius(10)
+            .alert(isPresented: $isShowingAlert){
+                Alert(title: Text("ログインエラー"), message: Text(errorMessage))
             }
             .padding()
             

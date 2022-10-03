@@ -14,5 +14,4 @@ class AppState: ObservableObject {
     @Published var chooseDate:String = ""
     @Published var dialy:[String] = ["Please add a dialy..."]
     @Published var separatedByUnderBar:String = ""
-    @Published var uid:String = ""
 }
