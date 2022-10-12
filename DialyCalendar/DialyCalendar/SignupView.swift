@@ -7,14 +7,15 @@
 
 import SwiftUI
 import FirebaseAuth
+import FirebaseFirestore
 
 struct SignupView: View {
     
-    let userAuth:UserAuth = UserAuth()
-    
     @EnvironmentObject var appState:AppState
     
+    let userAuth:UserAuth = UserAuth()
     let userInfo:UserInfo = UserInfo()
+    let db = Firestore.firestore()
     
     @State var email:String = ""
     @State var pass:String = ""
@@ -42,13 +43,20 @@ struct SignupView: View {
                             self.isShowingAlert = true
                             return
                         }
+                        if let user = Auth.auth().currentUser{
+                            userAuth.accessUserDB(uid: user.uid, email: user.email ?? "")
+                        }
                         self.appState.path.removeLast()
                     }
                 }else{
                     isShowingAlert = true
                 }
             }){
-                Text("Sign In!")
+                Text("Sign Up!")
+                    .foregroundColor(.white)
+                    .frame(width: 120, height: 50)
+                    .background(Color.blue)
+                    .cornerRadius(10)
                     .alert(isPresented: $isShowingAlert){
                         Alert(title: Text("登録失敗"), message: Text(errorMessage))
                     }

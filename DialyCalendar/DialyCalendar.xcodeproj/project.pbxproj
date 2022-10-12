@@ -16,13 +16,13 @@
 		DBDBD6C428DFFF23009B3141 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBDBD6C328DFFF23009B3141 /* GoogleService-Info.plist */; };
 		DBDBD6C928E00790009B3141 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6C828E00790009B3141 /* CalendarView.swift */; };
 		DBDBD6CB28E00995009B3141 /* CalendarDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6CA28E00995009B3141 /* CalendarDetail.swift */; };
-		DBDBD6CD28E00D72009B3141 /* DialyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6CC28E00D72009B3141 /* DialyView.swift */; };
+		DBDBD6CD28E00D72009B3141 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6CC28E00D72009B3141 /* DiaryView.swift */; };
 		DBDBD6CF28E00F14009B3141 /* MonthSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6CE28E00F14009B3141 /* MonthSelectView.swift */; };
 		DBDBD6D128E0112B009B3141 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6D028E0112B009B3141 /* RouteView.swift */; };
 		DBDBD6D328E01218009B3141 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6D228E01218009B3141 /* SignupView.swift */; };
 		DBDBD6D728E030FF009B3141 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6D628E030FF009B3141 /* UserAuth.swift */; };
 		DBDBD6D928E03296009B3141 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6D828E03296009B3141 /* UserInfo.swift */; };
-		DBDBD6FF28E3295E009B3141 /* AddDialyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6FE28E3295E009B3141 /* AddDialyView.swift */; };
+		DBDBD6FF28E3295E009B3141 /* AddDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDBD6FE28E3295E009B3141 /* AddDiaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,13 +38,13 @@
 		DBDBD6C328DFFF23009B3141 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DBDBD6C828E00790009B3141 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		DBDBD6CA28E00995009B3141 /* CalendarDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetail.swift; sourceTree = "<group>"; };
-		DBDBD6CC28E00D72009B3141 /* DialyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialyView.swift; sourceTree = "<group>"; };
+		DBDBD6CC28E00D72009B3141 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		DBDBD6CE28E00F14009B3141 /* MonthSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSelectView.swift; sourceTree = "<group>"; };
 		DBDBD6D028E0112B009B3141 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		DBDBD6D228E01218009B3141 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		DBDBD6D628E030FF009B3141 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		DBDBD6D828E03296009B3141 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		DBDBD6FE28E3295E009B3141 /* AddDialyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDialyView.swift; sourceTree = "<group>"; };
+		DBDBD6FE28E3295E009B3141 /* AddDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +101,9 @@
 				DBDBD68D28DF1087009B3141 /* ContentView.swift */,
 				DBDBD6CE28E00F14009B3141 /* MonthSelectView.swift */,
 				DBDBD6C828E00790009B3141 /* CalendarView.swift */,
-				DBDBD6CC28E00D72009B3141 /* DialyView.swift */,
+				DBDBD6CC28E00D72009B3141 /* DiaryView.swift */,
 				DBDBD6CA28E00995009B3141 /* CalendarDetail.swift */,
-				DBDBD6FE28E3295E009B3141 /* AddDialyView.swift */,
+				DBDBD6FE28E3295E009B3141 /* AddDiaryView.swift */,
 				DBDBD6D028E0112B009B3141 /* RouteView.swift */,
 				DBDBD6D228E01218009B3141 /* SignupView.swift */,
 				DBDBD6D628E030FF009B3141 /* UserAuth.swift */,
@@ -250,9 +250,9 @@
 				DBDBD6D928E03296009B3141 /* UserInfo.swift in Sources */,
 				DBDBD6C928E00790009B3141 /* CalendarView.swift in Sources */,
 				DBDBD6D128E0112B009B3141 /* RouteView.swift in Sources */,
-				DBDBD6CD28E00D72009B3141 /* DialyView.swift in Sources */,
+				DBDBD6CD28E00D72009B3141 /* DiaryView.swift in Sources */,
 				DBDBD68C28DF1087009B3141 /* DialyCalendarApp.swift in Sources */,
-				DBDBD6FF28E3295E009B3141 /* AddDialyView.swift in Sources */,
+				DBDBD6FF28E3295E009B3141 /* AddDiaryView.swift in Sources */,
 				DBDBD6D728E030FF009B3141 /* UserAuth.swift in Sources */,
 				DBDBD6CF28E00F14009B3141 /* MonthSelectView.swift in Sources */,
 			);
@@ -396,7 +396,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ayumu.DialyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -429,7 +429,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ayumu.DialyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

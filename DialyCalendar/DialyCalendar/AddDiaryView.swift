@@ -9,11 +9,11 @@ import SwiftUI
 import FirebaseFirestore
 import FirebaseAuth
 
-struct AddDialyView: View {
+struct AddDiaryView: View {
     
     @EnvironmentObject var appState:AppState
     @Environment(\.dismiss) var dissmiss
-    @State var dialy:String = ""
+    @State var diary:String = ""
     @State var errorMessage:String = ""
     @State var isShowingAleart:Bool = false
 
@@ -21,41 +21,41 @@ struct AddDialyView: View {
 
     var body: some View {
         VStack{
-            Text("add Dialy")
+            Text("add Diary")
                 .font(.title)
             Spacer()
             
-            TextField("I had lunch with my friend", text: $dialy)
+            TextField("I had lunch with my friend", text: $diary)
                 .padding(20)
             
-            Button("add dialy !"){
+            Button("add diary !"){
                 
-                if dialy != ""{
+                if diary != ""{
                     
                     if let user = Auth.auth().currentUser{
-                        db.document(user.uid).collection("dialy")
+                        db.document(user.uid).collection("diary")
                             .document(appState.separatedByUnderBar)
                             .getDocument(){(document, error) in
                                 
                                 if let document = document{
                                     
                                     if document.exists{
-                                        db.document(user.uid).collection("dialy")
+                                        db.document(user.uid).collection("diary")
                                             .document(appState.separatedByUnderBar)
                                             .updateData([
-                                                "content" : dialy
+                                                "content" : diary
                                             ])
                                     }else{
-                                        db.document(user.uid).collection("dialy")
+                                        db.document(user.uid).collection("diary")
                                             .document(appState.separatedByUnderBar)
                                             .setData([
                                                 "date" : appState.separatedByUnderBar,
-                                                "content" : dialy
+                                                "content" : diary
                                             ])
                                     }
                                 }
                             }
-                        appState.dialy[0] = dialy
+                        appState.diary[0] = diary
                         dissmiss()
                     }
                 }else{
@@ -63,6 +63,10 @@ struct AddDialyView: View {
                     isShowingAleart = true
                 }
             }
+            .foregroundColor(.white)
+            .frame(width: 120, height: 50)
+            .background(Color.blue)
+            .cornerRadius(10)
             .alert(isPresented: $isShowingAleart){
                 Alert(title: Text("入力エラー"), message: Text(errorMessage))
             }
@@ -79,8 +83,8 @@ struct AddDialyView: View {
     }
 }
 
-//struct AddDialy_Previews: PreviewProvider {
+//struct AddDiaryView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        AddDialyView()
+//        AddDiaryView()
 //    }
 //}

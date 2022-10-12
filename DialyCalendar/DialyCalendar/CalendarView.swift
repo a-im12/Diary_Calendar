@@ -35,11 +35,11 @@ struct CalendarView: View {
                             
                             appState.separatedByUnderBar = String(Calendar.current.component(.year, from: date)) + "_\(Calendar.current.component(.month, from: date))_\(Calendar.current.component(.day, from: date))"
                             
-                            appState.dialy = ["Please add a dialy..."]
+                            appState.diary = ["Please add a diary..."]
                             
                             if let user = Auth.auth().currentUser{
                                 
-                                db.document(user.uid).collection("dialy").whereField("date", isEqualTo: appState.separatedByUnderBar).getDocuments(){ (querySnapshot, error) in
+                                db.document(user.uid).collection("diary").whereField("date", isEqualTo: appState.separatedByUnderBar).getDocuments(){ (querySnapshot, error) in
                                     if let error = error{
                                         print(error)
                                         return
@@ -48,7 +48,7 @@ struct CalendarView: View {
                                             guard let content = document.get("content") as? String else {
                                                 continue
                                             }
-                                            appState.dialy[0] = content
+                                            appState.diary[0] = content
                                         }
                                     }
                                 }
@@ -67,11 +67,11 @@ struct CalendarView: View {
                             
                             appState.separatedByUnderBar = String(Calendar.current.component(.year, from: date)) + "_\(Calendar.current.component(.month, from: date))_\(Calendar.current.component(.day, from: date))"
                             
-                            appState.dialy = ["Please add a dialy..."]
+                            appState.diary = ["Please add a diary..."]
                             
                             if let user = Auth.auth().currentUser{
                                 
-                                db.document(user.uid).collection("dialy").whereField("date", isEqualTo: appState.separatedByUnderBar).getDocuments(){ (querySnapshot, error) in
+                                db.document(user.uid).collection("diary").whereField("date", isEqualTo: appState.separatedByUnderBar).getDocuments(){ (querySnapshot, error) in
                                     if let error = error{
                                         print(error)
                                         return
@@ -80,7 +80,7 @@ struct CalendarView: View {
                                             guard let content = document.get("content") as? String else {
                                                 continue
                                             }
-                                            appState.dialy[0] = content
+                                            appState.diary[0] = content
                                         }
                                     }
                                 }
@@ -102,14 +102,8 @@ struct CalendarView: View {
                 }
             }
             .sheet(isPresented: $isShowingView){
-                DialyView()
+                DiaryView()
             }
         }
     }
 }
-
-//struct CalendarView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CalendarView(monthToDisplay: <#Date#>)
-//    }
-//}

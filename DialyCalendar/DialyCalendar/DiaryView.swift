@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseFirestore
 
-struct DialyView: View {
+struct DiaryView: View {
     
 //    @Environment(\.dismiss) var dismiss
     @Environment(\.presentationMode) var presentation
@@ -17,10 +17,10 @@ struct DialyView: View {
     
     var body: some View {
         NavigationView{
-            Text(appState.dialy[0])
+            Text(appState.diary[0])
                 .toolbar{
                     NavigationLink{
-                        AddDialyView()
+                        AddDiaryView()
                     }label: {
                         Text(Image(systemName: "plus"))
                     }

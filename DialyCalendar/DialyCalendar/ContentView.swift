@@ -22,7 +22,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path:$appState.path){
-            Text("Welcome")
+            
+            Text("Login Page")
                 .padding(20)
                 .font(.title)
             TextField("mailaddress", text: $email)
@@ -40,17 +41,7 @@ struct ContentView: View {
                             isShowingAlert = true
                             return
                         }
-                        if let user = authResult?.user{
-                            uid = user.uid
-                            email = user.email ?? ""
-                                                            
-                            userAuth.accessUserDB(uid: uid, email: email)
-                            
-//                            self.appState.uid = uid
-                            // 画面遷移するために変換
-//                            self.appState.isLogin = true
-                            self.appState.path.append("Route")
-                        }
+                        self.appState.path.append("Route")
                     }
                 }else{
                     isShowingAlert = true
@@ -75,6 +66,11 @@ struct ContentView: View {
                 }else if string == "Route"{
                     RouteView()
                         .navigationBarBackButtonHidden(true)
+                }
+            }
+            .toolbar{
+                if let url = URL(string:"https://a-im12.github.io/How_to_use_Diary_Calendar/") {
+                    Link("How to", destination: url)
                 }
             }
         }

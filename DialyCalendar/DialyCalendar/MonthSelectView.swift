@@ -37,7 +37,6 @@ struct MonthSelectView: View {
                     CalendarView(selectMonth: targetMonth)
                 }
             }
-            .navigationTitle("Dialy Calendar")
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing){
                     Button(action:{
@@ -50,6 +49,10 @@ struct MonthSelectView: View {
                     }){
                         Text("Log Out")
                     }
+                }
+                ToolbarItem(placement: .navigationBarLeading){
+                    Text("Diary Calendar")
+                        .font(.title)
                 }
             }
         }

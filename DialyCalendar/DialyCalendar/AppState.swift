@@ -12,6 +12,6 @@ class AppState: ObservableObject {
     @Published var isLogin:Bool = false
     @Published var path = NavigationPath()
     @Published var chooseDate:String = ""
-    @Published var dialy:[String] = ["Please add a dialy..."]
+    @Published var diary:[String] = ["Please add diary..."]
     @Published var separatedByUnderBar:String = ""
 }

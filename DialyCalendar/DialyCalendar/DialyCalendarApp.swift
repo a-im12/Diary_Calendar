@@ -18,7 +18,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 @main
-struct DialyCalendarApp: App {
+struct DiaryCalendarApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
