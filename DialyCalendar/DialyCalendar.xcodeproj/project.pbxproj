@@ -29,7 +29,7 @@
 		44AA5E39E622EA73E82E30F5 /* Pods_DialyCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DialyCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5450558C2B0E88201EE0DE70 /* Pods-DialyCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DialyCalendar.debug.xcconfig"; path = "Target Support Files/Pods-DialyCalendar/Pods-DialyCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 		838E0C8552063A7B26F5B482 /* Pods-DialyCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DialyCalendar.release.xcconfig"; path = "Target Support Files/Pods-DialyCalendar/Pods-DialyCalendar.release.xcconfig"; sourceTree = "<group>"; };
-		DBDBD68828DF1087009B3141 /* DialyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DialyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBDBD68828DF1087009B3141 /* DiaryCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDBD68B28DF1087009B3141 /* DialyCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialyCalendarApp.swift; sourceTree = "<group>"; };
 		DBDBD68D28DF1087009B3141 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DBDBD68F28DF108A009B3141 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		DBDBD68928DF1087009B3141 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DBDBD68828DF1087009B3141 /* DialyCalendar.app */,
+				DBDBD68828DF1087009B3141 /* DiaryCalendar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,9 +127,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DBDBD68728DF1087009B3141 /* DialyCalendar */ = {
+		DBDBD68728DF1087009B3141 /* DiaryCalendar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DBDBD69628DF108A009B3141 /* Build configuration list for PBXNativeTarget "DialyCalendar" */;
+			buildConfigurationList = DBDBD69628DF108A009B3141 /* Build configuration list for PBXNativeTarget "DiaryCalendar" */;
 			buildPhases = (
 				CE43A3839C1FEF5DE34052DD /* [CP] Check Pods Manifest.lock */,
 				DBDBD68428DF1087009B3141 /* Sources */,
@@ -141,11 +141,11 @@
 			);
 			dependencies = (
 			);
-			name = DialyCalendar;
+			name = DiaryCalendar;
 			packageProductDependencies = (
 			);
 			productName = DialyCalendar;
-			productReference = DBDBD68828DF1087009B3141 /* DialyCalendar.app */;
+			productReference = DBDBD68828DF1087009B3141 /* DiaryCalendar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -178,7 +178,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DBDBD68728DF1087009B3141 /* DialyCalendar */,
+				DBDBD68728DF1087009B3141 /* DiaryCalendar */,
 			);
 		};
 /* End PBXProject section */
@@ -396,7 +396,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ayumu.DialyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -429,7 +429,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ayumu.DialyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -453,7 +453,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DBDBD69628DF108A009B3141 /* Build configuration list for PBXNativeTarget "DialyCalendar" */ = {
+		DBDBD69628DF108A009B3141 /* Build configuration list for PBXNativeTarget "DiaryCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DBDBD69728DF108A009B3141 /* Debug */,
